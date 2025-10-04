@@ -1,0 +1,136 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  padding: 20px 0;
+  
+  .brand-section {
+    text-align: center;
+    margin-bottom: 40px;
+    
+    .hotel-icon {
+      font-size: 64px;
+      color: var(--ion-color-primary);
+      margin-bottom: 16px;
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--ion-color-dark);
+    }
+    
+    p {
+      margin: 4px 0 0 0;
+      color: var(--ion-color-medium);
+      font-size: 14px;
+    }
+  }
+}
+
+.login-card {
+  margin: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  
+  ion-card-header {
+    text-align: center;
+    padding-bottom: 8px;
+    
+    ion-card-title {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    
+    ion-card-subtitle {
+      color: var(--ion-color-medium);
+    }
+  }
+}
+
+.section-divider {
+  text-align: center;
+  margin: 24px 0 16px 0;
+  position: relative;
+  
+  &.guest-divider {
+    margin-top: 32px;
+  }
+  
+  ion-text {
+    background: var(--ion-background-color);
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--ion-color-light-shade);
+    z-index: -1;
+  }
+}
+
+.input-item {
+  --background: transparent;
+  --border-radius: 12px;
+  --inner-padding-end: 0;
+  margin-bottom: 16px;
+  border: 1px solid var(--ion-color-light-shade);
+  
+  ion-icon {
+    margin-right: 8px;
+  }
+}
+
+.action-button {
+  --border-radius: 12px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  margin: 8px 0;
+  font-weight: 600;
+  
+  ion-icon {
+    font-size: 18px;
+  }
+}
+
+.demo-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 12px;
+  background: var(--ion-color-light);
+  border-radius: 8px;
+  font-size: 12px;
+  
+  ion-icon {
+    margin-right: 6px;
+  }
+}
+
+.footer {
+  text-align: center;
+  margin-top: 32px;
+  padding: 16px 0;
+  
+  small {
+    font-size: 12px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .login-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}

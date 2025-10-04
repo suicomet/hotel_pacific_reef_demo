@@ -1,0 +1,7 @@
+{
+  "name": "hotel_pacific_reef_app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Admin - gestión de habitaciones</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Todas las habitaciones</h2>
+  <p>Clickea para cambiar su disponibilidad</p>
+  
+  <div class="rooms-grid">
+    <div 
+      *ngFor="let room of rooms" 
+      class="room-square" 
+      [class.available]="room.available"
+      [class.occupied]="!room.available"
+      (click)="toggleRoom(room)">
+      <div class="room-number">{{ room.number }}</div>
+      <div class="room-status">{{ room.available ? 'Disponible' : 'Reservado' }}</div>
+    </div>
+  </div>
+</ion-content>>

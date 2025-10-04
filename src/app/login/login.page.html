@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Hotel Pacific Reef</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  
+  <div class="login-container">
+    <div class="brand-section">
+      <ion-icon name="bed" class="hotel-icon"></ion-icon>
+      <h1>Pacif Reef</h1>
+      <p>El hotel que te acompaña</p>
+    </div>
+
+    <ion-card class="login-card">
+      <ion-card-header>
+        <ion-card-title>Bienvenido</ion-card-title>
+        <ion-card-subtitle>Escoge tu metodo de ingreso</ion-card-subtitle>
+      </ion-card-header>
+
+
+      <ion-card-content>
+        <div class="section-divider">
+          <ion-text color="medium">Acesso staff</ion-text>
+        </div>
+
+        <ion-item class="input-item">
+          <ion-icon slot="start" name="shield-checkmark" color="primary"></ion-icon>
+          <ion-input type="password" placeholder="Ingresar contraseña" [(ngModel)]="adminPassword" (keyup.enter)="adminLogin()"></ion-input>
+        </ion-item>
+
+
+        <ion-button expand="block" color="primary" (click)="adminLogin()" class="action-button">
+          <ion-icon slot="start" name="key"></ion-icon>
+          Login Staff
+        </ion-button>
+
+        <div class="section-divider guest-divider">
+          <ion-text color="medium">Acceso visita</ion-text>
+        </div>
+
+        <ion-button 
+          expand="block" 
+          color="secondary" 
+          (click)="guestLogin()"
+          class="action-button">
+          <ion-icon slot="start" name="person-circle"></ion-icon>
+          Continua como visita
+        </ion-button>
+
+        <ion-note class="demo-info">
+          <ion-icon name="information-circle" slot="start"></ion-icon>
+          Demo password: "admin123"
+        </ion-note>
+
+      </ion-card-content>
+
+    </ion-card>
+     <div class="footer">
+      <ion-text color="medium">
+        <small>© 2025 Pacific Reef Hotel. Todos los derechos reservados.</small>
+      </ion-text>
+    </div>
+  </div>
+</ion-content>

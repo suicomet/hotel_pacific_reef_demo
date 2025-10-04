@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Reservar una habitación</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Habitaciones disponibles</h2>
+  <p>Clickea para reservar</p>
+  
+  <div class="rooms-grid">
+    <div 
+      *ngFor="let room of availableRooms" 
+      class="room-square available"
+      (click)="bookRoom(room)">
+      <div class="room-number">{{ room.number }}</div>
+      <div class="room-status">Click para reservar</div>
+    </div>
+  </div>
+
+  <div *ngIf="availableRooms.length === 0" class="no-rooms">
+    <p>No existen habitaciones disponibles por el momento</p>
+  </div>
+</ion-content>
