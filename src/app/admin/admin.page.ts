@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { 
   IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton 
 } from '@ionic/angular/standalone';
+import { AlertController } from '@ionic/angular/standalone';
 import { RoomService, Room } from '../services/room.service';
 
 @Component({
@@ -18,7 +19,8 @@ import { RoomService, Room } from '../services/room.service';
 export class AdminPage implements OnInit {
   rooms: Room[] = [];
 
-  constructor(private roomService: RoomService) {}
+  constructor(private roomService: RoomService,
+    private alertController: AlertController) {}
 
   ngOnInit() {
     this.loadRooms();
@@ -28,8 +30,39 @@ export class AdminPage implements OnInit {
     this.rooms = this.roomService.getAllRooms();
   }
 
-  toggleRoom(room: Room) {
-    this.roomService.updateRoom(room.id, !room.available);
-    this.loadRooms(); 
+  async toggleRoom(room: Room) {
+    const isAvailable = room.available;
+    const nextAvailable = !isAvailable;
+
+    const header = isAvailable ? 'Confirmar reserva' : 'Confirmar cancelación';
+    const message = isAvailable 
+      ? `¿Reservar la habitación ${room.number}?`
+      : `¿Cancelar la reserva de la habitación ${room.number}?`;
+
+    const alert = await this.alertController.create({
+      header,
+      message,
+      buttons: [
+        { text: 'No', role: 'cancel' },
+        { 
+          text: 'Sí', 
+          handler: async () => {
+            this.roomService.updateRoom(room.id, nextAvailable);
+
+            const success = await this.alertController.create({
+              header: 'Listo',
+              message: nextAvailable 
+                ? `Reserva cancelada para la habitación ${room.number}.`
+                : `¡Habitación ${room.number} reservada!`,
+              buttons: ['OK']
+            });
+            await success.present();
+            this.loadRooms();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 }
