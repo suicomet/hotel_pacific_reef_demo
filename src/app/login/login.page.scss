@@ -9,22 +9,30 @@
     text-align: center;
     margin-bottom: 40px;
     
+    // Estilo para el icono del hotel
     .hotel-icon {
-      font-size: 64px;
-      color: var(--ion-color-primary);
-      margin-bottom: 16px;
+      width: 140px;
+      height: 140px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background: transparent;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
     }
     
     h1 {
       margin: 0;
       font-size: 28px;
       font-weight: bold;
-      color: var(--ion-color-dark);
+      color: #8B4513;
     }
     
     p {
       margin: 4px 0 0 0;
-      color: var(--ion-color-medium);
+      color: #A0522D;
       font-size: 14px;
     }
   }
@@ -32,8 +40,9 @@
 
 .login-card {
   margin: 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(139, 69, 19, 0.2);
   border-radius: 16px;
+  background: linear-gradient(135deg, #F5E6D3, #E6D3C7);
   
   ion-card-header {
     text-align: center;
@@ -42,10 +51,11 @@
     ion-card-title {
       font-size: 24px;
       font-weight: 600;
+      color: #8B4513;
     }
     
     ion-card-subtitle {
-      color: var(--ion-color-medium);
+      color: #A0522D;
     }
   }
 }
@@ -60,10 +70,11 @@
   }
   
   ion-text {
-    background: var(--ion-background-color);
+    background: #F5E6D3;
     padding: 0 12px;
     font-size: 14px;
     font-weight: 500;
+    color: #8B4513;
   }
   
   &::before {
@@ -73,32 +84,56 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: var(--ion-color-light-shade);
+    background: #D2B48C;
     z-index: -1;
   }
 }
 
 .input-item {
-  --background: transparent;
+  --background: #F5E6D3;
   --border-radius: 12px;
   --inner-padding-end: 0;
   margin-bottom: 16px;
-  border: 1px solid var(--ion-color-light-shade);
+  border: 1px solid #D2B48C;
   
   ion-icon {
     margin-right: 8px;
+    color: #8B4513;
   }
 }
 
-.action-button {
-  --border-radius: 12px;
+// Estilos para botones
+.login-button {
+  --border-radius: 25px;
   --padding-top: 20px;
   --padding-bottom: 20px;
   margin: 8px 0;
   font-weight: 600;
+  --background: linear-gradient(135deg, #8B4513, #A0522D);
+  --color: #F5E6D3;
+  --background-hover: linear-gradient(135deg, #A0522D, #8B4513);
+  --box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
   
   ion-icon {
     font-size: 18px;
+    color: #F5E6D3;
+  }
+}
+
+.guest-button {
+  --border-radius: 25px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  margin: 8px 0;
+  font-weight: 600;
+  --background: linear-gradient(135deg, #D2B48C, #E6D3C7);
+  --color: #8B4513;
+  --background-hover: linear-gradient(135deg, #E6D3C7, #D2B48C);
+  --box-shadow: 0 4px 12px rgba(210, 180, 140, 0.3);
+  
+  ion-icon {
+    font-size: 18px;
+    color: #8B4513;
   }
 }
 
@@ -108,12 +143,14 @@
   justify-content: center;
   margin-top: 24px;
   padding: 12px;
-  background: var(--ion-color-light);
+  background: #E6D3C7;
   border-radius: 8px;
   font-size: 12px;
+  color: #8B4513;
   
   ion-icon {
     margin-right: 6px;
+    color: #8B4513;
   }
 }
 
@@ -124,9 +161,9 @@
   
   small {
     font-size: 12px;
+    color: #A0522D;
   }
 }
-
 
 @media (min-width: 768px) {
   .login-container {

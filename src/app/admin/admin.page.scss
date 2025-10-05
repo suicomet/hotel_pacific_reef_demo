@@ -1,3 +1,33 @@
+// Estilos con paleta café y beige
+ion-content {
+  --background: linear-gradient(135deg, #F5E6D3, #E6D3C7) !important;
+}
+
+.admin-toolbar {
+  --background: linear-gradient(135deg, #D2B48C, #E6D3C7);
+  --color: #8B4513;
+  
+  ion-title {
+    color: #8B4513 !important;
+    font-weight: bold;
+  }
+  
+  ion-back-button {
+    --color: #8B4513;
+  }
+}
+
+h2 {
+  color: #8B4513 !important;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+p {
+  color: #A0522D !important;
+  margin-bottom: 20px;
+}
+
 .rooms-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -11,22 +41,36 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
   
   &:active {
     transform: scale(0.95);
   }
   
   &.available {
-    background: #10dc60;
+    background: linear-gradient(135deg, #10dc60, #2dd36f);
     color: white;
+    border: 2px solid #0f9d58;
+    
+    &:hover {
+      background: linear-gradient(135deg, #2dd36f, #10dc60);
+      box-shadow: 0 4px 12px rgba(16, 220, 96, 0.3);
+    }
   }
   
   &.occupied {
-    background: #f04141;
+    background: linear-gradient(135deg, #f04141, #ff6b6b);
     color: white;
+    border: 2px solid #e53e3e;
+    opacity: 0.9;
+    
+    &:hover {
+      background: linear-gradient(135deg, #ff6b6b, #f04141);
+      box-shadow: 0 4px 12px rgba(240, 65, 65, 0.3);
+    }
   }
 }
 
@@ -38,4 +82,5 @@
 .room-status {
   font-size: 10px;
   margin-top: 4px;
+  text-align: center;
 }

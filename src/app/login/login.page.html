@@ -8,7 +8,7 @@
   
   <div class="login-container">
     <div class="brand-section">
-      <ion-icon name="bed" class="hotel-icon"></ion-icon>
+        <img src="/assets/icon/icono_hotel.png" alt="Hotel Logo" class="hotel-icon">
       <h1>Pacif Reef</h1>
       <p>El hotel que te acompaña</p>
     </div>
@@ -16,7 +16,7 @@
     <ion-card class="login-card">
       <ion-card-header>
         <ion-card-title>Bienvenido</ion-card-title>
-        <ion-card-subtitle>Escoge tu metodo de ingreso</ion-card-subtitle>
+        <ion-card-subtitle>Escoge tu método de ingreso</ion-card-subtitle>
       </ion-card-header>
 
 
@@ -31,7 +31,7 @@
         </ion-item>
 
 
-        <ion-button expand="block" color="primary" (click)="adminLogin()" class="action-button">
+        <ion-button expand="block" (click)="adminLogin()" class="login-button">
           <ion-icon slot="start" name="key"></ion-icon>
           Login Staff
         </ion-button>
@@ -42,11 +42,10 @@
 
         <ion-button 
           expand="block" 
-          color="secondary" 
           (click)="guestLogin()"
-          class="action-button">
+          class="guest-button">
           <ion-icon slot="start" name="person-circle"></ion-icon>
-          Continua como visita
+          Continúa como visita
         </ion-button>
 
         <ion-note class="demo-info">

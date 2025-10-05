@@ -1,3 +1,34 @@
+// Estilos con paleta café y beige
+ion-content {
+  --background: linear-gradient(135deg, #F5E6D3, #E6D3C7) !important;
+  background: linear-gradient(135deg, #F5E6D3, #E6D3C7) !important;
+}
+
+.guest-toolbar {
+  --background: linear-gradient(135deg, #D2B48C, #E6D3C7);
+  --color: #8B4513;
+  
+  ion-title {
+    color: #8B4513 !important;
+    font-weight: bold;
+  }
+  
+  ion-back-button {
+    --color: #8B4513;
+  }
+}
+
+h2 {
+  color: #8B4513 !important;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+p {
+  color: #A0522D !important;
+  margin-bottom: 20px;
+}
+
 .rooms-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -11,17 +42,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
   
   &:active {
     transform: scale(0.95);
   }
   
   &.available {
-    background: #10dc60;
+    background: linear-gradient(135deg, #10dc60, #2dd36f);
     color: white;
+    border: 2px solid #0f9d58;
+    
+    &:hover {
+      background: linear-gradient(135deg, #2dd36f, #10dc60);
+      box-shadow: 0 4px 12px rgba(16, 220, 96, 0.3);
+    }
   }
 }
 
@@ -33,10 +71,42 @@
 .room-status {
   font-size: 10px;
   margin-top: 4px;
+  text-align: center;
 }
 
 .no-rooms {
   text-align: center;
   margin-top: 40px;
-  color: #666;
+  color: #8B4513 !important;
+  font-size: 16px;
+  padding: 20px;
+  background: #E6D3C7 !important;
+  border-radius: 12px;
+  border: 1px solid #D2B48C !important;
+}
+
+// Estilos adicionales para forzar la aplicación
+ion-content .ion-padding {
+  background: linear-gradient(135deg, #F5E6D3, #E6D3C7) !important;
+}
+
+ion-content .ion-padding h2 {
+  color: #8B4513 !important;
+}
+
+ion-content .ion-padding p {
+  color: #A0522D !important;
+}
+
+// Estilos globales para asegurar que se apliquen
+ion-content {
+  background: linear-gradient(135deg, #F5E6D3, #E6D3C7) !important;
+}
+
+ion-content h2 {
+  color: #8B4513 !important;
+}
+
+ion-content p {
+  color: #A0522D !important;
 }
