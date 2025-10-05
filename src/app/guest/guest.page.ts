@@ -57,7 +57,7 @@ export class GuestPage implements OnInit {
     this.roomService.updateRoom(room.id, false);
     
     const alert = await this.alertController.create({
-      header: '¡Exito en su reserva!',
+      header: '¡Reserva exitosa!',
       message: `¡Habitación ${room.number} reservada!`,
       buttons: ['OK']
     });

@@ -171,3 +171,17 @@
     margin: 0 auto;
   }
 }
+
+// Estilos del header de Login
+ion-header {
+  ion-toolbar {
+    --color: #8B4513; // café para el título
+    // Mantiene el fondo por defecto del tema, sin hacerlo azul
+  }
+
+  ion-title {
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+  }
+}

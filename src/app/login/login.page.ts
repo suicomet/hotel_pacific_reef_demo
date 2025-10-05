@@ -46,8 +46,8 @@ export class LoginPage implements OnInit {
       this.router.navigate(['/admin'])
     } else {
       const alert = await this.alertController.create({
-        header: 'Login Failed',
-        message: 'Invalid admin password',
+        header: 'Error',
+        message: 'Contraseña incorrecta. Inténtalo de nuevo.',
         buttons: ['OK']
       });
       await alert.present();
